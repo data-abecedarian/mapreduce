@@ -39,11 +39,11 @@ public class HdfsLineCount extends Configured implements Tool {
     public int run(String[] args) throws Exception {
         String inputPath = args[0];
         Configuration conf = this.getConf();
-        conf.set("mapred.job.queue.name", "wirelessdev");
-        conf.set("mapred.job.priority", JobPriority.VERY_HIGH.name());
+//        conf.set("mapreduce.job.queue.name", "wirelessdev");
+//        conf.set("mapreduce.job.priority", JobPriority.VERY_HIGH.name());
+        conf.set("mapreduce.job.name", "HdfsLineCount.By.abecedarian");
 
         Job job = Job.getInstance(conf);
-        job.setJobName("HdfsLineCount.By.tianle.li");
         job.setJarByClass(HdfsLineCount.class);
         job.setMapperClass(LineCountMapper.class);
         job.setMapOutputKeyClass(LongWritable.class);
