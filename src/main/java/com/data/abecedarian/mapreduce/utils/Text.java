@@ -5,6 +5,6 @@ package com.data.abecedarian.mapreduce.utils;
  */
 public class Text {
     public static void main(String[] args) {
-
+        System.out.println("test");
     }
 }
